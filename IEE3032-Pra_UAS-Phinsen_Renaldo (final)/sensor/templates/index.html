@@ -1,0 +1,201 @@
+<html>
+  <head>
+    <title>Sensor Value</title>
+    <meta http-equiv="refresh" content="2">
+    
+    <style>
+        .image-container {
+          float: right;
+          margin-left: 10px;
+          margin-bottom: 10px;
+        }
+        
+        .image-container img {
+          display: block;
+          margin-bottom: 10px;
+        }
+    </style>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.22.2/moment.min.js"></script>
+
+    <h1>Sistem Tiga Pabrik</h1>
+    <h3>Phinsen Renaldo - 202000265</h3>
+  </head>
+
+  <body>
+
+    <div class="container">    
+      <h4> Sistem 1: SmartFarm </h4>
+      <p>Monitoring SmartFarm-1: Susu Hewani dan Telur</p>
+      <table border="1">
+            <tr>
+                <th align="left">Standard Plate Count (SPC)</th>
+                <td style="width:30%" align="right">{{ sfarm_1_1 }}</td>
+            </tr>
+            <tr>
+                <th align="left">Kekeruhan (NTU)</th>
+                <td style="width:30%" align="right">{{ sfarm_1_2 }}</td>
+            </tr>
+            <tr>
+                <th align="left">pH</th>
+                <td style="width:30%" align="right">{{ sfarm_1_3 }}</td>
+            </tr>
+      </table>
+
+      </br>
+      <p>Monitoring SmartFarm-2: Daging Merah</p>
+      <table border="1">
+          <tr>
+              <th align="left">Jumlah Mikroorganisme (koloni/gram)</th>
+              <td style="width:30%" align="right">{{ sfarm_2_1 }}</td>
+          </tr>
+          <tr>
+              <th align="left">Pigmen mioglobin (mg/gr)</th>
+              <td style="width:30%" align="right">{{ sfarm_2_2 }}</td>
+          </tr>
+          <tr>
+              <th align="left">Berat (kg)</th>
+              <td style="width:30%" align="right">{{ sfarm_2_3 }}</td>
+          </tr>
+      </table>
+
+      </br>
+      <p>Monitoring SmartFarm-3: Daging Putih</p>
+      <table border="1">
+          <tr>
+              <th align="left">Kadar Nitrogen (%)</th>
+              <td style="width:30%" align="right">{{ sfarm_3_1 }}</td>
+          </tr>
+          <tr>
+              <th align="left">Kadar Oksigen (%)</th>
+              <td style="width:30%" align="right">{{ sfarm_3_2 }}</td>
+          </tr>
+          <tr>
+              <th align="left">Kadar Karbondioksida (%)</th>
+              <td style="width:30%" align="right">{{ sfarm_3_3 }}</td>
+          </tr>
+      </table>
+    </div>
+
+
+
+
+
+    <div class="container">    
+        <h4> Sistem 2: SmartPlantation </h4>
+        <p>Monitoring SmartPlantation-1: Susu Hewani dan Telur</p>
+        <table border="1">
+              <tr>
+                  <th align="left">Volume Susu (L)</th>
+                  <td style="width:30%" align="right">{{ splant_1_1 }}</td>
+              </tr>
+              <tr>
+                  <th align="left">Kekeruhan (NTU)</th>
+                  <td style="width:30%" align="right">{{ splant_1_2 }}</td>
+              </tr>
+              <tr>
+                  <th align="left">pH</th>
+                  <td style="width:30%" align="right">{{ splant_1_3 }}</td>
+              </tr>
+        </table>
+  
+        </br>
+        <p>Monitoring SmartPlantation-2: Daging Merah</p>
+        <table border="1">
+            <tr>
+                <th align="left">Jumlah Mikroorganisme (koloni/gram)</th>
+                <td style="width:30%" align="right">{{ splant_2_1 }}</td>
+            </tr>
+            <tr>
+                <th align="left">Pigmen mioglobin (mg/gr)</th>
+                <td style="width:30%" align="right">{{ splant_2_2 }}</td>
+            </tr>
+            <tr>
+                <th align="left">Berat (kg)</th>
+                <td style="width:30%" align="right">{{ splant_2_3 }}</td>
+            </tr>
+        </table>
+  
+        </br>
+        <p>Monitoring SmartPlantation-3: Daging Putih</p>
+        <table border="1">
+            <tr>
+                <th align="left">Kadar Nitrogen (%)</th>
+                <td style="width:30%" align="right">{{ splant_3_1 }}</td>
+            </tr>
+            <tr>
+                <th align="left">Kadar Oksigen (%)</th>
+                <td style="width:30%" align="right">{{ splant_3_2 }}</td>
+            </tr>
+            <tr>
+                <th align="left">Kadar Karbondioksida (%)</th>
+                <td style="width:30%" align="right">{{ splant_3_3 }}</td>
+            </tr>
+        </table>
+      </div>
+
+
+
+
+      <div class="container">    
+        <h4> Sistem 3: SmartRestaurant </h4>
+        <p>Monitoring SmartRestaurant-1: Susu Hewani dan Telur</p>
+        <table border="1">
+              <tr>
+                  <th align="left">Volume Susu (L)</th>
+                  <td style="width:30%" align="right">{{ sresto_1_1 }}</td>
+              </tr>
+              <tr>
+                  <th align="left">Kekeruhan (NTU)</th>
+                  <td style="width:30%" align="right">{{ sresto_1_2 }}</td>
+              </tr>
+              <tr>
+                  <th align="left">pH</th>
+                  <td style="width:30%" align="right">{{ sresto_1_3 }}</td>
+              </tr>
+        </table>
+  
+        </br>
+        <p>Monitoring SmartRestaurant-2: Daging Merah</p>
+        <table border="1">
+            <tr>
+                <th align="left">Jumlah Mikroorganisme (koloni/gram)</th>
+                <td style="width:30%" align="right">{{ sresto_2_1 }}</td>
+            </tr>
+            <tr>
+                <th align="left">Pigmen mioglobin (mg/gr)</th>
+                <td style="width:30%" align="right">{{ sresto_2_2 }}</td>
+            </tr>
+            <tr>
+                <th align="left">Berat (kg)</th>
+                <td style="width:30%" align="right">{{ sresto_2_3 }}</td>
+            </tr>
+        </table>
+  
+        </br>
+        <p>Monitoring SmartRestaurant-3: Daging Putih</p>
+        <table border="1">
+            <tr>
+                <th align="left">Kadar Nitrogen (%)</th>
+                <td style="width:30%" align="right">{{ sresto_3_1 }}</td>
+            </tr>
+            <tr>
+                <th align="left">Kadar Oksigen (%)</th>
+                <td style="width:30%" align="right">{{ sresto_3_2 }}</td>
+            </tr>
+            <tr>
+                <th align="left">Kadar Karbondioksida (%)</th>
+                <td style="width:30%" align="right">{{ sresto_3_3 }}</td>
+            </tr>
+        </table>
+      </div>
+  
+  
+
+
+    <canvas id="myChart"></canvas>
+    <script src="myscript.js"></script>
+  </body>
+</html>

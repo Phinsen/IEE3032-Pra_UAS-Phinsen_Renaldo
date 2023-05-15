@@ -1,0 +1,2491 @@
+[
+    {
+        "id": "249ae24ba3ea02cd",
+        "type": "tab",
+        "label": "Pra-UAS",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c386444d5b307a85",
+        "type": "inject",
+        "z": "249ae24ba3ea02cd",
+        "name": "subsistem 1",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 120,
+        "wires": [
+            [
+                "d07eefa9c16508f2",
+                "3661bb832baa3c4f",
+                "7e85648a06dda28c"
+            ]
+        ]
+    },
+    {
+        "id": "d07eefa9c16508f2",
+        "type": "random",
+        "z": "249ae24ba3ea02cd",
+        "name": "Standard Plate Count (CFU/ml)",
+        "low": "100000",
+        "high": "450000",
+        "inte": "false",
+        "property": "payload",
+        "x": 490,
+        "y": 120,
+        "wires": [
+            [
+                "86085083e08e2dbc",
+                "8eea759339765690",
+                "4929d68cfa704d27"
+            ]
+        ]
+    },
+    {
+        "id": "86085083e08e2dbc",
+        "type": "mqtt out",
+        "z": "249ae24ba3ea02cd",
+        "name": "SPC",
+        "topic": "s-farm1/1",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 730,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "8eea759339765690",
+        "type": "debug",
+        "z": "249ae24ba3ea02cd",
+        "name": "debug 48",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "4929d68cfa704d27",
+        "type": "ui_gauge",
+        "z": "249ae24ba3ea02cd",
+        "name": "",
+        "group": "1fe00eb954d00fb4",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "SPC",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "500000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "200000",
+        "seg2": "400000",
+        "x": 730,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "5d40927ef8088ee6",
+        "type": "inject",
+        "z": "249ae24ba3ea02cd",
+        "name": "Subsistem 7",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1960,
+        "y": 140,
+        "wires": [
+            [
+                "e7212d431fb3d16d",
+                "4683e31b4b3a7308",
+                "a18d5d408783eb63"
+            ]
+        ]
+    },
+    {
+        "id": "e7212d431fb3d16d",
+        "type": "random",
+        "z": "249ae24ba3ea02cd",
+        "name": "Temperature (℃)",
+        "low": "-15",
+        "high": "57",
+        "inte": "false",
+        "property": "payload",
+        "x": 2210,
+        "y": 140,
+        "wires": [
+            [
+                "39eecfdb1e00cd81",
+                "fa45929be3ac2081",
+                "1c6a5168b4553654"
+            ]
+        ]
+    },
+    {
+        "id": "39eecfdb1e00cd81",
+        "type": "mqtt out",
+        "z": "249ae24ba3ea02cd",
+        "name": "Temperature (℃)",
+        "topic": "s-resto1/1",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 2490,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "fa45929be3ac2081",
+        "type": "debug",
+        "z": "249ae24ba3ea02cd",
+        "name": "debug 49",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2460,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "1c6a5168b4553654",
+        "type": "ui_gauge",
+        "z": "249ae24ba3ea02cd",
+        "name": "",
+        "group": "5074ef38f1dac2fd",
+        "order": 6,
+        "width": "0",
+        "height": "0",
+        "gtype": "gage",
+        "title": "Temperatur (℃)",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-15",
+        "max": "57",
+        "colors": [
+            "#00d5ff",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 2480,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "4683e31b4b3a7308",
+        "type": "random",
+        "z": "249ae24ba3ea02cd",
+        "name": "Humidity",
+        "low": "-15",
+        "high": "57",
+        "inte": "false",
+        "property": "payload",
+        "x": 2180,
+        "y": 260,
+        "wires": [
+            [
+                "faa144f5e6f4f242",
+                "b1ae396b3be1d9ed",
+                "f51f1dcbbd1f7cbd"
+            ]
+        ]
+    },
+    {
+        "id": "faa144f5e6f4f242",
+        "type": "mqtt out",
+        "z": "249ae24ba3ea02cd",
+        "name": "Humidity",
+        "topic": "s-resto1/2",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 2460,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "b1ae396b3be1d9ed",
+        "type": "debug",
+        "z": "249ae24ba3ea02cd",
+        "name": "debug 50",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2460,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "f51f1dcbbd1f7cbd",
+        "type": "ui_gauge",
+        "z": "249ae24ba3ea02cd",
+        "name": "",
+        "group": "5074ef38f1dac2fd",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humidity",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-15",
+        "max": "57",
+        "colors": [
+            "#00d5ff",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 2460,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "a18d5d408783eb63",
+        "type": "random",
+        "z": "249ae24ba3ea02cd",
+        "name": "Wind speed (m/s)",
+        "low": "-15",
+        "high": "57",
+        "inte": "false",
+        "property": "payload",
+        "x": 2210,
+        "y": 380,
+        "wires": [
+            [
+                "e7b7dafaafd8b11b",
+                "ed49ba3d52a512c9",
+                "f32ea3730a40dd7d"
+            ]
+        ]
+    },
+    {
+        "id": "e7b7dafaafd8b11b",
+        "type": "mqtt out",
+        "z": "249ae24ba3ea02cd",
+        "name": "Wind speed (m/s)",
+        "topic": "s-resto1/3",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 2490,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "ed49ba3d52a512c9",
+        "type": "debug",
+        "z": "249ae24ba3ea02cd",
+        "name": "debug 51",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2460,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "f32ea3730a40dd7d",
+        "type": "ui_gauge",
+        "z": "249ae24ba3ea02cd",
+        "name": "",
+        "group": "5074ef38f1dac2fd",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Wind speed (m/s)",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-15",
+        "max": "57",
+        "colors": [
+            "#00d5ff",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 2490,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "3661bb832baa3c4f",
+        "type": "random",
+        "z": "249ae24ba3ea02cd",
+        "name": "Sensor Kekeruhan (NTU)",
+        "low": "0",
+        "high": "100",
+        "inte": "false",
+        "property": "payload",
+        "x": 470,
+        "y": 260,
+        "wires": [
+            [
+                "c68b8732a7bd69dc",
+                "ae07a61143ead465",
+                "1cc88dce3bcd0635"
+            ]
+        ]
+    },
+    {
+        "id": "c68b8732a7bd69dc",
+        "type": "mqtt out",
+        "z": "249ae24ba3ea02cd",
+        "name": "Kekeruhan (NTU)",
+        "topic": "s-farm1/2",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 730,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "ae07a61143ead465",
+        "type": "debug",
+        "z": "249ae24ba3ea02cd",
+        "name": "debug 55",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "1cc88dce3bcd0635",
+        "type": "ui_gauge",
+        "z": "249ae24ba3ea02cd",
+        "name": "",
+        "group": "1fe00eb954d00fb4",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Kekeruhan (NTU)",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "10",
+        "seg2": "20",
+        "x": 730,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "7e85648a06dda28c",
+        "type": "random",
+        "z": "249ae24ba3ea02cd",
+        "name": "Sensor kepadatan (g/cm3)",
+        "low": "1000",
+        "high": "1150",
+        "inte": "false",
+        "property": "payload",
+        "x": 480,
+        "y": 400,
+        "wires": [
+            [
+                "6385e4e7e97cbf25",
+                "37104be29a1bbebc",
+                "6b1b1ec4b190d124"
+            ]
+        ]
+    },
+    {
+        "id": "6385e4e7e97cbf25",
+        "type": "mqtt out",
+        "z": "249ae24ba3ea02cd",
+        "name": "Sensor kepadatan (g/cm3)",
+        "topic": "s-farm1/3",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 800,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "37104be29a1bbebc",
+        "type": "debug",
+        "z": "249ae24ba3ea02cd",
+        "name": "debug 56",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "6b1b1ec4b190d124",
+        "type": "ui_gauge",
+        "z": "249ae24ba3ea02cd",
+        "name": "",
+        "group": "1fe00eb954d00fb4",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor kepadatan (g/cm3)",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "900",
+        "max": "1200",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 800,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "ba0755c52a28783a",
+        "type": "inject",
+        "z": "249ae24ba3ea02cd",
+        "name": "subsistem 2",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 540,
+        "wires": [
+            [
+                "1a4e03eca727f79f",
+                "6f65263c873307e7",
+                "62066e4aa5433d2c"
+            ]
+        ]
+    },
+    {
+        "id": "1a4e03eca727f79f",
+        "type": "random",
+        "z": "249ae24ba3ea02cd",
+        "name": "Sensor Mikroorganisme",
+        "low": "0",
+        "high": "500",
+        "inte": "true",
+        "property": "payload",
+        "x": 470,
+        "y": 540,
+        "wires": [
+            [
+                "c7f7be9e73e9960e",
+                "e87d1f6581b41843",
+                "2c18da3f042529b6"
+            ]
+        ]
+    },
+    {
+        "id": "c7f7be9e73e9960e",
+        "type": "mqtt out",
+        "z": "249ae24ba3ea02cd",
+        "name": "Jumlah Mikroorganisme (Koloni/gram)",
+        "topic": "s-farm2/1",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 790,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "e87d1f6581b41843",
+        "type": "debug",
+        "z": "249ae24ba3ea02cd",
+        "name": "debug 57",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "2c18da3f042529b6",
+        "type": "ui_gauge",
+        "z": "249ae24ba3ea02cd",
+        "name": "",
+        "group": "1fe00eb954d00fb4",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Jumlah Mikroorganisme (Koloni/gram)",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "500",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "75",
+        "seg2": "100",
+        "x": 790,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "6f65263c873307e7",
+        "type": "random",
+        "z": "249ae24ba3ea02cd",
+        "name": " Sensor Meat Spectrophotometer",
+        "low": "0",
+        "high": "6",
+        "inte": "false",
+        "property": "payload",
+        "x": 490,
+        "y": 680,
+        "wires": [
+            [
+                "0cb5fa4d3c912cb2",
+                "4f374c8df339a06e",
+                "60c40c4bb7691d60"
+            ]
+        ]
+    },
+    {
+        "id": "0cb5fa4d3c912cb2",
+        "type": "mqtt out",
+        "z": "249ae24ba3ea02cd",
+        "name": "pigmen mioglobin (mg/gr)",
+        "topic": "s-farm2/2",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 810,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "4f374c8df339a06e",
+        "type": "debug",
+        "z": "249ae24ba3ea02cd",
+        "name": "debug 58",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "60c40c4bb7691d60",
+        "type": "ui_gauge",
+        "z": "249ae24ba3ea02cd",
+        "name": "",
+        "group": "1fe00eb954d00fb4",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "pigmen mioglobin (mg/gr)",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "6",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 810,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "62066e4aa5433d2c",
+        "type": "random",
+        "z": "249ae24ba3ea02cd",
+        "name": "Sensor Berat",
+        "low": "0",
+        "high": "1000",
+        "inte": "false",
+        "property": "payload",
+        "x": 430,
+        "y": 820,
+        "wires": [
+            [
+                "36de0904413b366f",
+                "57f63c3aac42c265",
+                "a369a9f3e9d70307"
+            ]
+        ]
+    },
+    {
+        "id": "36de0904413b366f",
+        "type": "mqtt out",
+        "z": "249ae24ba3ea02cd",
+        "name": "berat (kg)",
+        "topic": "s-farm2/3",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 700,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "57f63c3aac42c265",
+        "type": "debug",
+        "z": "249ae24ba3ea02cd",
+        "name": "debug 59",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "a369a9f3e9d70307",
+        "type": "ui_gauge",
+        "z": "249ae24ba3ea02cd",
+        "name": "",
+        "group": "1fe00eb954d00fb4",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Berat (kg)",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "14",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 700,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "81454442180d90b8",
+        "type": "inject",
+        "z": "249ae24ba3ea02cd",
+        "name": "subsistem 3",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 980,
+        "wires": [
+            [
+                "3a2ea46f79941021",
+                "648c4770fa60e380",
+                "9223a960f975cdbf"
+            ]
+        ]
+    },
+    {
+        "id": "3a2ea46f79941021",
+        "type": "random",
+        "z": "249ae24ba3ea02cd",
+        "name": "Sensor Nitrogen",
+        "low": "50",
+        "high": "80",
+        "inte": "false",
+        "property": "payload",
+        "x": 440,
+        "y": 980,
+        "wires": [
+            [
+                "3ffdebabb7bb464d",
+                "e0cf0178f2f670fb",
+                "975c067e60245e47"
+            ]
+        ]
+    },
+    {
+        "id": "3ffdebabb7bb464d",
+        "type": "mqtt out",
+        "z": "249ae24ba3ea02cd",
+        "name": "Kadar Nitrogen (%)",
+        "topic": "s-farm3/1",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 730,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "e0cf0178f2f670fb",
+        "type": "debug",
+        "z": "249ae24ba3ea02cd",
+        "name": "debug 60",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "975c067e60245e47",
+        "type": "ui_gauge",
+        "z": "249ae24ba3ea02cd",
+        "name": "",
+        "group": "1fe00eb954d00fb4",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Kadar Nitrogen (%)",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "75",
+        "seg2": "100",
+        "x": 730,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "648c4770fa60e380",
+        "type": "random",
+        "z": "249ae24ba3ea02cd",
+        "name": "Sensor Oksigen",
+        "low": "5",
+        "high": "10",
+        "inte": "false",
+        "property": "payload",
+        "x": 440,
+        "y": 1120,
+        "wires": [
+            [
+                "95c73049aca0108e",
+                "5cafc4036c3b3b02",
+                "2ceb537c784305f2"
+            ]
+        ]
+    },
+    {
+        "id": "95c73049aca0108e",
+        "type": "mqtt out",
+        "z": "249ae24ba3ea02cd",
+        "name": "Kadar Oksigen (%)",
+        "topic": "s-farm3/2",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 790,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "5cafc4036c3b3b02",
+        "type": "debug",
+        "z": "249ae24ba3ea02cd",
+        "name": "debug 61",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "2ceb537c784305f2",
+        "type": "ui_gauge",
+        "z": "249ae24ba3ea02cd",
+        "name": "",
+        "group": "1fe00eb954d00fb4",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Kadar Oksigen (%)",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 790,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "9223a960f975cdbf",
+        "type": "random",
+        "z": "249ae24ba3ea02cd",
+        "name": "Sensor Karbondioksida",
+        "low": "2",
+        "high": "10",
+        "inte": "false",
+        "property": "payload",
+        "x": 470,
+        "y": 1260,
+        "wires": [
+            [
+                "6e8069950c042dcb",
+                "f9eb2f99ebd5200f",
+                "31f07e7c26355d0a"
+            ]
+        ]
+    },
+    {
+        "id": "6e8069950c042dcb",
+        "type": "mqtt out",
+        "z": "249ae24ba3ea02cd",
+        "name": "Kadar Karbondioksida (%)",
+        "topic": "s-farm3/3",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 770,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "f9eb2f99ebd5200f",
+        "type": "debug",
+        "z": "249ae24ba3ea02cd",
+        "name": "debug 62",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "31f07e7c26355d0a",
+        "type": "ui_gauge",
+        "z": "249ae24ba3ea02cd",
+        "name": "",
+        "group": "1fe00eb954d00fb4",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Kadar Karbondioksida (%)",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 770,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "b16143ac0dd2542c",
+        "type": "inject",
+        "z": "249ae24ba3ea02cd",
+        "name": "subsistem 4",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1070,
+        "y": 100,
+        "wires": [
+            [
+                "18a1350fc3455159",
+                "4683e6d553fe8e87",
+                "70fd69e0eace659c"
+            ]
+        ]
+    },
+    {
+        "id": "18a1350fc3455159",
+        "type": "random",
+        "z": "249ae24ba3ea02cd",
+        "name": "Serat",
+        "low": "0.2",
+        "high": "16",
+        "inte": "false",
+        "property": "payload",
+        "x": 1290,
+        "y": 100,
+        "wires": [
+            [
+                "f496a7a0e64f3f13",
+                "f54aa903be38e551",
+                "82e990d6e267c4b9"
+            ]
+        ]
+    },
+    {
+        "id": "f496a7a0e64f3f13",
+        "type": "mqtt out",
+        "z": "249ae24ba3ea02cd",
+        "name": "Kadar serat (gr/100gr)",
+        "topic": "s-plant1/1",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 1560,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "f54aa903be38e551",
+        "type": "debug",
+        "z": "249ae24ba3ea02cd",
+        "name": "debug 63",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1520,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "82e990d6e267c4b9",
+        "type": "ui_gauge",
+        "z": "249ae24ba3ea02cd",
+        "name": "",
+        "group": "056f7b2241e9616d",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Kadar serat (gr/100gr)",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "20",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1560,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "4683e6d553fe8e87",
+        "type": "random",
+        "z": "249ae24ba3ea02cd",
+        "name": "Protein",
+        "low": "2.6",
+        "high": "10",
+        "inte": "false",
+        "property": "payload",
+        "x": 1300,
+        "y": 240,
+        "wires": [
+            [
+                "480bd6f94a19f01b",
+                "7c4b8696b83d5788",
+                "d92e67e793033c37"
+            ]
+        ]
+    },
+    {
+        "id": "480bd6f94a19f01b",
+        "type": "mqtt out",
+        "z": "249ae24ba3ea02cd",
+        "name": "Kadar protein (gr/100gr)",
+        "topic": "s-plant1/2",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 1570,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "7c4b8696b83d5788",
+        "type": "debug",
+        "z": "249ae24ba3ea02cd",
+        "name": "debug 64",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1520,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "d92e67e793033c37",
+        "type": "ui_gauge",
+        "z": "249ae24ba3ea02cd",
+        "name": "",
+        "group": "056f7b2241e9616d",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Kadar protein (gr/100gr)",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "20",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1570,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "70fd69e0eace659c",
+        "type": "random",
+        "z": "249ae24ba3ea02cd",
+        "name": "Kadar air (%)",
+        "low": "12",
+        "high": "25",
+        "inte": "false",
+        "property": "payload",
+        "x": 1310,
+        "y": 380,
+        "wires": [
+            [
+                "59c788518d90464c",
+                "ebee10d668273618",
+                "0b05d65eb993bc50"
+            ]
+        ]
+    },
+    {
+        "id": "59c788518d90464c",
+        "type": "mqtt out",
+        "z": "249ae24ba3ea02cd",
+        "name": "Kadar air (%)",
+        "topic": "s-plant1/3",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 1530,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "ebee10d668273618",
+        "type": "debug",
+        "z": "249ae24ba3ea02cd",
+        "name": "debug 65",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1520,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "0b05d65eb993bc50",
+        "type": "ui_gauge",
+        "z": "249ae24ba3ea02cd",
+        "name": "",
+        "group": "056f7b2241e9616d",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Kadar air (%)",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "40",
+        "max": "5",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "20",
+        "seg2": "12",
+        "x": 1530,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "b55eda32e7c13e15",
+        "type": "inject",
+        "z": "249ae24ba3ea02cd",
+        "name": "subsistem 5",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1070,
+        "y": 540,
+        "wires": [
+            [
+                "5291dc762b849cad",
+                "6865e3e261d63d1c",
+                "6388f81916db8f1e"
+            ]
+        ]
+    },
+    {
+        "id": "5291dc762b849cad",
+        "type": "random",
+        "z": "249ae24ba3ea02cd",
+        "name": "spektrofotometri",
+        "low": "0",
+        "high": "320",
+        "inte": "false",
+        "property": "payload",
+        "x": 1320,
+        "y": 540,
+        "wires": [
+            [
+                "c8fc6344d02ae530",
+                "92750601cdb00a51",
+                "144ea920f48865af"
+            ]
+        ]
+    },
+    {
+        "id": "c8fc6344d02ae530",
+        "type": "mqtt out",
+        "z": "249ae24ba3ea02cd",
+        "name": "Kadar klorofil (mg/100gr)",
+        "topic": "s-plant2/1",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 1570,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "92750601cdb00a51",
+        "type": "debug",
+        "z": "249ae24ba3ea02cd",
+        "name": "debug 66",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1520,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "144ea920f48865af",
+        "type": "ui_gauge",
+        "z": "249ae24ba3ea02cd",
+        "name": "",
+        "group": "056f7b2241e9616d",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Kadar klorofil (mg/100gr)",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "500",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "50",
+        "seg2": "120",
+        "x": 1570,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "6865e3e261d63d1c",
+        "type": "random",
+        "z": "249ae24ba3ea02cd",
+        "name": "Vitamin C",
+        "low": "0",
+        "high": "150",
+        "inte": "false",
+        "property": "payload",
+        "x": 1300,
+        "y": 680,
+        "wires": [
+            [
+                "324e559a5b5e233f",
+                "05d52824ea361817",
+                "f008d31505bec211"
+            ]
+        ]
+    },
+    {
+        "id": "324e559a5b5e233f",
+        "type": "mqtt out",
+        "z": "249ae24ba3ea02cd",
+        "name": "Kadar vitamin C (mg/100gr)",
+        "topic": "s-plant2/2",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 1580,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "05d52824ea361817",
+        "type": "debug",
+        "z": "249ae24ba3ea02cd",
+        "name": "debug 67",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1520,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "f008d31505bec211",
+        "type": "ui_gauge",
+        "z": "249ae24ba3ea02cd",
+        "name": "",
+        "group": "056f7b2241e9616d",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Kadar vitamin C (mg/100gr)",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "500",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1580,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "6388f81916db8f1e",
+        "type": "random",
+        "z": "249ae24ba3ea02cd",
+        "name": "Vitamin K",
+        "low": "25",
+        "high": "500",
+        "inte": "false",
+        "property": "payload",
+        "x": 1300,
+        "y": 820,
+        "wires": [
+            [
+                "d6edd375eb36dd62",
+                "91dca58864213881",
+                "25a4d26c268fa880"
+            ]
+        ]
+    },
+    {
+        "id": "d6edd375eb36dd62",
+        "type": "mqtt out",
+        "z": "249ae24ba3ea02cd",
+        "name": "Kadar Vitamin K (mcg/100gr)",
+        "topic": "s-plant2/3",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 1580,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "91dca58864213881",
+        "type": "debug",
+        "z": "249ae24ba3ea02cd",
+        "name": "debug 68",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1520,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "25a4d26c268fa880",
+        "type": "ui_gauge",
+        "z": "249ae24ba3ea02cd",
+        "name": "",
+        "group": "056f7b2241e9616d",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Kadar Vitamin K (mcg/100gr)",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "500",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1580,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "1b08e87234dc35f5",
+        "type": "inject",
+        "z": "249ae24ba3ea02cd",
+        "name": "subsistem 6",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1050,
+        "y": 1000,
+        "wires": [
+            [
+                "5efcf3f26f0447a1",
+                "98036091c4b67d9c",
+                "760b2348c634b2b8"
+            ]
+        ]
+    },
+    {
+        "id": "5efcf3f26f0447a1",
+        "type": "random",
+        "z": "249ae24ba3ea02cd",
+        "name": "Tekstur (kg/cm2)",
+        "low": "0.5",
+        "high": "25",
+        "inte": "false",
+        "property": "payload",
+        "x": 1300,
+        "y": 1000,
+        "wires": [
+            [
+                "1a9986560f05b9e4",
+                "d3ea662778df3b99",
+                "1b6d1c24b8a8744a"
+            ]
+        ]
+    },
+    {
+        "id": "1a9986560f05b9e4",
+        "type": "mqtt out",
+        "z": "249ae24ba3ea02cd",
+        "name": "Tekstur (kg/cm2)",
+        "topic": "s-plant3/1",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 1520,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "d3ea662778df3b99",
+        "type": "debug",
+        "z": "249ae24ba3ea02cd",
+        "name": "debug 75",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1500,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "1b6d1c24b8a8744a",
+        "type": "ui_gauge",
+        "z": "249ae24ba3ea02cd",
+        "name": "",
+        "group": "056f7b2241e9616d",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Tekstur (kg/cm2)",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "30",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "1.5",
+        "seg2": "2",
+        "x": 1520,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "98036091c4b67d9c",
+        "type": "random",
+        "z": "249ae24ba3ea02cd",
+        "name": "Vitamin C",
+        "low": "5",
+        "high": "150",
+        "inte": "false",
+        "property": "payload",
+        "x": 1280,
+        "y": 1140,
+        "wires": [
+            [
+                "df5d91a93551dbf4",
+                "b8c5e7fb08e37120",
+                "6d4b54a8874de726"
+            ]
+        ]
+    },
+    {
+        "id": "df5d91a93551dbf4",
+        "type": "mqtt out",
+        "z": "249ae24ba3ea02cd",
+        "name": "Kadar vitamin C (mg/100gr)",
+        "topic": "s-plant3/2",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 1560,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "b8c5e7fb08e37120",
+        "type": "debug",
+        "z": "249ae24ba3ea02cd",
+        "name": "debug 76",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1500,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "6d4b54a8874de726",
+        "type": "ui_gauge",
+        "z": "249ae24ba3ea02cd",
+        "name": "",
+        "group": "056f7b2241e9616d",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Kadar vitamin C (mg/100gr)",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "500",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1560,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "760b2348c634b2b8",
+        "type": "random",
+        "z": "249ae24ba3ea02cd",
+        "name": "Vitamin K",
+        "low": "0",
+        "high": "500",
+        "inte": "false",
+        "property": "payload",
+        "x": 1280,
+        "y": 1280,
+        "wires": [
+            [
+                "0a26bd8a70b2d29a",
+                "9a6b6efaf8ddea8e",
+                "3846729bde3f5fa7"
+            ]
+        ]
+    },
+    {
+        "id": "0a26bd8a70b2d29a",
+        "type": "mqtt out",
+        "z": "249ae24ba3ea02cd",
+        "name": "Kadar Vitamin K (mcg/100gr)",
+        "topic": "s-plant3/3",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 1560,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "9a6b6efaf8ddea8e",
+        "type": "debug",
+        "z": "249ae24ba3ea02cd",
+        "name": "debug 77",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1500,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "3846729bde3f5fa7",
+        "type": "ui_gauge",
+        "z": "249ae24ba3ea02cd",
+        "name": "",
+        "group": "056f7b2241e9616d",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Kadar Vitamin K (mcg/100gr)",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "500",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1560,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "f78e6eb2ecc47426",
+        "type": "inject",
+        "z": "249ae24ba3ea02cd",
+        "name": "Subsistem 8",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1960,
+        "y": 540,
+        "wires": [
+            [
+                "73c8e95aca25694a",
+                "ecfdcd118c668939",
+                "63206f9a13851adf"
+            ]
+        ]
+    },
+    {
+        "id": "73c8e95aca25694a",
+        "type": "random",
+        "z": "249ae24ba3ea02cd",
+        "name": "Finance sensor ($)",
+        "low": "500",
+        "high": "10000",
+        "inte": "true",
+        "property": "payload",
+        "x": 2210,
+        "y": 540,
+        "wires": [
+            [
+                "f34d207cc4a3be08",
+                "9030758bdf9bf293",
+                "c572cb0c1c0f0119"
+            ]
+        ]
+    },
+    {
+        "id": "f34d207cc4a3be08",
+        "type": "mqtt out",
+        "z": "249ae24ba3ea02cd",
+        "name": "Finance sensor ($)",
+        "topic": "s-resto2/1",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 2550,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "9030758bdf9bf293",
+        "type": "debug",
+        "z": "249ae24ba3ea02cd",
+        "name": "debug 78",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2520,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "ecfdcd118c668939",
+        "type": "random",
+        "z": "249ae24ba3ea02cd",
+        "name": "Customer satisfaction sensor",
+        "low": "0",
+        "high": "100",
+        "inte": "false",
+        "property": "payload",
+        "x": 2240,
+        "y": 660,
+        "wires": [
+            [
+                "e5bf3b7a781ef89c",
+                "0c1cb130e438d352",
+                "ef56e4a86bb02330"
+            ]
+        ]
+    },
+    {
+        "id": "e5bf3b7a781ef89c",
+        "type": "mqtt out",
+        "z": "249ae24ba3ea02cd",
+        "name": "Humidity",
+        "topic": "s-resto2/2",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 2520,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "0c1cb130e438d352",
+        "type": "debug",
+        "z": "249ae24ba3ea02cd",
+        "name": "debug 79",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2520,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "63206f9a13851adf",
+        "type": "random",
+        "z": "249ae24ba3ea02cd",
+        "name": "Wind speed (m/s)",
+        "low": "-15",
+        "high": "57",
+        "inte": "false",
+        "property": "payload",
+        "x": 2210,
+        "y": 780,
+        "wires": [
+            [
+                "385f53a04f1d0148",
+                "aa7c8c253b366065",
+                "6f7697f525fb2fcf"
+            ]
+        ]
+    },
+    {
+        "id": "385f53a04f1d0148",
+        "type": "mqtt out",
+        "z": "249ae24ba3ea02cd",
+        "name": "Wind speed (m/s)",
+        "topic": "s-resto2/3",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 2550,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "aa7c8c253b366065",
+        "type": "debug",
+        "z": "249ae24ba3ea02cd",
+        "name": "debug 80",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2520,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "6f7697f525fb2fcf",
+        "type": "ui_gauge",
+        "z": "249ae24ba3ea02cd",
+        "name": "",
+        "group": "5074ef38f1dac2fd",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Wind speed (m/s)",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-15",
+        "max": "57",
+        "colors": [
+            "#00d5ff",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 2550,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "79879f3e938ecd18",
+        "type": "inject",
+        "z": "249ae24ba3ea02cd",
+        "name": "Subsistem 9",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1960,
+        "y": 940,
+        "wires": [
+            [
+                "798084869cc702d9",
+                "92407ace695c31c9",
+                "e3b61baf1718c82d"
+            ]
+        ]
+    },
+    {
+        "id": "798084869cc702d9",
+        "type": "random",
+        "z": "249ae24ba3ea02cd",
+        "name": "Temperature (℃)",
+        "low": "-15",
+        "high": "57",
+        "inte": "false",
+        "property": "payload",
+        "x": 2210,
+        "y": 940,
+        "wires": [
+            [
+                "07f7741179b63dc9",
+                "e65a42cd39235d83",
+                "f441cfe6e4e3d531"
+            ]
+        ]
+    },
+    {
+        "id": "07f7741179b63dc9",
+        "type": "mqtt out",
+        "z": "249ae24ba3ea02cd",
+        "name": "Temperature (℃)",
+        "topic": "s-resto3/1",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 2490,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "e65a42cd39235d83",
+        "type": "debug",
+        "z": "249ae24ba3ea02cd",
+        "name": "debug 81",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2460,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "f441cfe6e4e3d531",
+        "type": "ui_gauge",
+        "z": "249ae24ba3ea02cd",
+        "name": "",
+        "group": "5074ef38f1dac2fd",
+        "order": 6,
+        "width": "0",
+        "height": "0",
+        "gtype": "gage",
+        "title": "Temperatur (℃)",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-15",
+        "max": "57",
+        "colors": [
+            "#00d5ff",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 2480,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "92407ace695c31c9",
+        "type": "random",
+        "z": "249ae24ba3ea02cd",
+        "name": "Humidity",
+        "low": "-15",
+        "high": "57",
+        "inte": "false",
+        "property": "payload",
+        "x": 2180,
+        "y": 1060,
+        "wires": [
+            [
+                "18fb265f844dcc68",
+                "cf6811adf61b00e0",
+                "efb9f6e1f2474c5e"
+            ]
+        ]
+    },
+    {
+        "id": "18fb265f844dcc68",
+        "type": "mqtt out",
+        "z": "249ae24ba3ea02cd",
+        "name": "Humidity",
+        "topic": "s-resto3/2",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 2460,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "cf6811adf61b00e0",
+        "type": "debug",
+        "z": "249ae24ba3ea02cd",
+        "name": "debug 82",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2460,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "efb9f6e1f2474c5e",
+        "type": "ui_gauge",
+        "z": "249ae24ba3ea02cd",
+        "name": "",
+        "group": "5074ef38f1dac2fd",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humidity",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-15",
+        "max": "57",
+        "colors": [
+            "#00d5ff",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 2460,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "e3b61baf1718c82d",
+        "type": "random",
+        "z": "249ae24ba3ea02cd",
+        "name": "Wind speed (m/s)",
+        "low": "-15",
+        "high": "57",
+        "inte": "false",
+        "property": "payload",
+        "x": 2210,
+        "y": 1180,
+        "wires": [
+            [
+                "dea69513c6dd27aa",
+                "cb32eeb7c68b2da1",
+                "8591820d36db3031"
+            ]
+        ]
+    },
+    {
+        "id": "dea69513c6dd27aa",
+        "type": "mqtt out",
+        "z": "249ae24ba3ea02cd",
+        "name": "Wind speed (m/s)",
+        "topic": "s-resto3/3",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 2490,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "cb32eeb7c68b2da1",
+        "type": "debug",
+        "z": "249ae24ba3ea02cd",
+        "name": "debug 83",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2460,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "8591820d36db3031",
+        "type": "ui_gauge",
+        "z": "249ae24ba3ea02cd",
+        "name": "",
+        "group": "5074ef38f1dac2fd",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Wind speed (m/s)",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-15",
+        "max": "57",
+        "colors": [
+            "#00d5ff",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 2490,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "c572cb0c1c0f0119",
+        "type": "ui_gauge",
+        "z": "249ae24ba3ea02cd",
+        "name": "",
+        "group": "056f7b2241e9616d",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Finance sensor ($)",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "12000",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "2500",
+        "seg2": "5000",
+        "x": 2550,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "ef56e4a86bb02330",
+        "type": "ui_gauge",
+        "z": "249ae24ba3ea02cd",
+        "name": "",
+        "group": "056f7b2241e9616d",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Customer satisfaction sensor :)",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 2590,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "42f78dc81b1a3654",
+        "type": "mqtt-broker",
+        "name": "localhost",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "1fe00eb954d00fb4",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "d1f3887e0037eecc",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": true
+    },
+    {
+        "id": "5074ef38f1dac2fd",
+        "type": "ui_group",
+        "name": "Group 3",
+        "tab": "d1f3887e0037eecc",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "056f7b2241e9616d",
+        "type": "ui_group",
+        "name": "Group 2",
+        "tab": "d1f3887e0037eecc",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "d1f3887e0037eecc",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
